@@ -358,12 +358,12 @@ void process_file(FILE* f, const char* fname) {
 
         if (opts.print_moments) {
             printf("\tCentral moments\n");
-            printf("\tmean     = %12.5lf\n", moments.mean);
-            printf("\tvariance = %12.5lf\n", moments.variance);
-            printf("\tstd.dev. = %12.5lf\n", sqrt(moments.variance));
-            printf("\tskewness = %12.5lf\n", moments.skewness);
-            printf("\tkurtosis = %12.5lf\n", moments.kurtosis);
-            printf("\tex.kurt. = %12.5lf\n", moments.kurtosis-3);
+            printf("\tmean     = %12.10lf\n", moments.mean);
+            printf("\tvariance = %12.10lf\n", moments.variance);
+            printf("\tstd.dev. = %12.10lf\n", sqrt(moments.variance));
+            printf("\tskewness = %12.10lf\n", moments.skewness);
+            printf("\tkurtosis = %12.10lf\n", moments.kurtosis);
+            printf("\tex.kurt. = %12.10lf\n", moments.kurtosis-3);
             printf("\n");
         }
 
@@ -371,12 +371,12 @@ void process_file(FILE* f, const char* fname) {
         if (opts.finite_size_correction)
             printf(" with finite size correction");
         printf("\n");
-        printf("\talpha = %12.5lf\n", result.alpha);
-        printf("\txmin  = %12.5lf\n", result.xmin );
-        printf("\tL     = %12.5lf\n", result.L    );
-        printf("\tD     = %12.5lf\n", result.D    );
+        printf("\talpha = %12.10lf\n", result.alpha);
+        printf("\txmin  = %12.10lf\n", result.xmin );
+        printf("\tL     = %12.10lf\n", result.L    );
+        printf("\tD     = %12.10lf\n", result.D    );
         if (!isnan(result.p)) {
-            printf("\tp     = %12.5lf%s\n", result.p,
+            printf("\tp     = %12.10lf%s\n", result.p,
                     opts.p_value_method == PLFIT_P_VALUE_APPROXIMATE ?
                     " (approximation)" : "");
         }
